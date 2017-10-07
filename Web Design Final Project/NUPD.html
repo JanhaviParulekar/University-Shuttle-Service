@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	<title>Northeastern-Red EYE</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+		<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+		<style type="text/css">
+   
+		body {
+				background-color: #212121;
+				color: white;
+			} 
+
+
+		.content{
+				margin-left : 10px;
+				float : left;
+			}
+
+		#image{
+				float: left;
+			}
+ 
+		.wrapper{
+				margin : 100px;
+				overflow : hidden;
+			}
+
+		.wrapper1{
+				height : 800px;
+				text-align : center;
+				overflow : hidden;
+				font-size : 20px;
+			}
+
+		#redeye{
+				margin: auto;
+				width: 938.5px;
+				height: 279px;
+			}
+
+		#NUPD {
+				top : 100px;
+				left : 0;
+				border : 0;
+				height : 242px;
+				width :242px;
+			}
+						
+ .navbar-header .navbar-brand:hover,
+.navbar-header .navbar-brand:focus,
+.navbar-collapse .navbar-nav > li > a:hover,
+.navbar-collapse .navbar-nav > li > a:focus {
+    color: #990000;
+
+}
+
+
+
+.navbar-header .navbar-brand,
+.navbar-header .navbar-brand,
+.navbar-collapse .navbar-nav,
+.navbar-collapse .navbar-nav{
+	font-weight: bold;
+	font-family: 'Roboto', sans-serif;
+} 
+
+.form-group, footer{
+font-family: 'Roboto', sans-serif;
+}
+
+legend{
+font-family: 'Roboto', sans-serif;
+font-weight: bold;
+}
+
+.btn {
+    background-color: #990000; 
+    border: none;
+    color: white;
+	padding: 7px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15 px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #990000;
+    color: white;
+}
+
+
+input[type=button] 
+{
+    background-color: #990000;
+    border: none;
+    color: white;
+	border-radius: 5px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+    padding: 8px 16px;
+    text-decoration: none;
+	width: 50%
+    cursor: pointer;
+}
+
+			
+			
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/****** LOGIN MODAL ******/
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+} 
+
+.login-help{
+  font-size: 12px;
+}
+		</style>
+
+	</head>
+	<body>
+		<div ng-app="myApp">
+		<br><br><br>
+			<div class="wrapper">
+			<div class="row">
+			<div class="col-md-6">
+				<div class="visible-lg" id="image">
+
+					<img src="NUPD.jpeg" id="NUPD" alt="NUPD">
+				</div>
+				<div class="visible-md" id="image">
+
+					<img src="NUPD.jpeg" id="NUPD" alt="NUPD">
+				</div>
+			</div>
+			<div class="col-md-6">
+			<div class="content">
+				<center>
+					Northeastern’s Public Safety Division provides an on-campus 
+					personal safety escort service twenty-four hours a day, seven days a week.
+				<br><br>
+				<p><span class="glyphicon glyphicon-map-marker"></span>
+				716 Columbus Place, Boston, Massachusetts 02120 </p>
+				<br>
+				<a href="tel:+1(617)373-2121"><p> &nbsp <span class="glyphicon glyphicon-phone-alt"></span> (617) 373-2121</p></a>
+
+				</center>
+			</div>
+			</div>
+			</div>
+			</div>
+
+			<div class="wrapper1">
+				<h1 class="text-center"> <strong>Red eye</strong></h1>
+				<img class="visible-lg" id="redeye" src="NU_RedEye.jpg" alt="RedEye">
+				<br>
+				<br>
+	
+				<p class="visible-lg">During the Fall, Winter and Spring semesters, a special nighttime off campus safety escort, the “REDEYE“,<br> is  provided from dusk to dawn for those students who reside within ONE AND A HALF MILES of the center of campus.<br> Every night from 7:00PM until 6:00AM, the “REDEYE” runs every 20 minutes, and the van picks up at the Snell Library and the Ruggles Public Safety Substation on Forsyth Street. During December and January Intersession and the Summer semester the “REDEYE” will run on the half hour.</p>
+				<p class="visible-md">During the Fall, Winter and Spring semesters, a special nighttime off campus safety escort, the “REDEYE“, is  provided from dusk to dawn for those students who reside within ONE AND A HALF MILES of the center of campus. Every night from 7:00PM until 6:00AM, the “REDEYE” runs every 20 minutes, and the van picks up at the Snell Library and the Ruggles Public Safety Substation on Forsyth Street. During December and January Intersession and the Summer semester the “REDEYE” will run on the half hour.</p>
+				<p class="visible-sm">During the Fall, Winter and Spring semesters, a special nighttime off campus safety escort, the “REDEYE“, is  provided from dusk to dawn for those students who reside within ONE AND A HALF MILES of the center of campus. Every night from 7:00PM until 6:00AM, the “REDEYE” runs every 20 minutes, and the van picks up at the Snell Library and the Ruggles Public Safety Substation on Forsyth Street.</p>
+				<p class="visible-xs">During the Fall, Winter and Spring semesters, a special nighttime off campus safety escort, the “REDEYE“, is  provided from dusk to dawn for those students who reside within ONE AND A HALF MILES of the center of campus. </p>
+
+			</div>
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+    </button>
+      <a class="navbar-brand" href="HomePage.html"><span class="glyphicon glyphicon-eye-open"></span>RedEye</a>
+    </div>
+    <div>
+  <div class="collapse navbar-collapse" id="navbar1">
+    <ul class="nav navbar-nav">
+     <li><a data-toggle="modal" data-target="#login-modal" style="cursor:pointer">Book a Ride!</a></li>
+	<li><a href="ShoppingCart.html">Order Snacks</a></li>
+	<li><a href="aboutUs.html">About Us</a></li>
+	<li><a href="Events.html">Events</a></li>
+	<li><a href="locations.html">Areas Covered</a></li>
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Interact with Us<span class="caret"></span></a>
+    <ul class="dropdown-menu">
+	<li><a href="Complaint.html">Grievances</a></li>
+    <li><a href="contactUs.html">Contact Us</a></li>
+    <li><a href="NUPD.html">NUPD-Services</a></li>
+    </ul>
+    </li>
+    </ul>
+	<form class="navbar-form navbar-right" role="search">
+    <div class="input-group">
+	<a href="tel:+8572609895"><i class="icon-search"></i><input type = "button" value="Emergency: (857)-260-9895"></a>
+     </div>
+     </form>
+    </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1 style="color:black">Login to Your Account</h1><br>
+				  <form action='login.php' method='post' accept-charset='UTF-8'>
+				  <input type='hidden' name='submitted' id='submitted' value='1'/>
+					<input type="text" name="user" placeholder="Username">
+					<input type="password" name="pass" placeholder="Password">
+					<input type="submit" name="Submit" class="login loginmodal-submit" value="Submit" >
+				  </form>
+					
+				  
+				</div>
+			</div>
+		  </div>
+
+
+
+		</div>		
+	</body>
+
+	<br><br><br><br>
+
+	<footer class="footer">
+	   <div class="container text-center">
+		<small style="color:#039BE5" class="copyright">Copyright &copy 2016. All Rights Reserved.</small><br>
+		<a href="https://www.instagram.com"><small style="color:#039BE5" class="fa fa-lg fa-instagram pull-center">  </small></a>
+		<a href="https://plus.google.com/"><small style="color:#039BE5" class="fa fa-lg fa-google-plus pull-center">  </small></a>
+		<a href="https://www.twitter.com"><small style="color:#039BE5" class="fa fa-lg fa-twitter pull-center">  </small></a>
+		<a href="https://www.facebook.com"><small style="color:#039BE5" class="fa fa-lg fa-facebook pull-center">  </small></a>
+		</div>
+	</footer>
+</html>
+

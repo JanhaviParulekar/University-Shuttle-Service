@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Red-Eye:Shopping Cart</title>
+	<link rel="stylesheet" type="text/css" href="styleCart.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>	
+	
+var check=false;
+
+
+function myFunction() {
+	
+	if(check==true)
+	{
+    alert("Your order has been placed!");
+	 var rowCount = orderedProductsTbl.rows.length;
+        for (var i = rowCount - 2; i > 0; i--) 
+		{
+            orderedProductsTbl.deleteRow(i);
+        }
+	shoppingCart=[];
+	cart_total_price=0;
+	document.getElementById("cart_total").innerHTML=cart_total_price;
+	check=false;
+}
+else
+{
+  alert("Please select a few items to place an order! ");
+}
+
+}
+
+
+    var shoppingCart = [];
+
+    function displayShoppingCart(){
+        var orderedProductsTblBody=document.getElementById("orderedProductsTblBody");
+        
+        while(orderedProductsTblBody.rows.length>0) {
+            orderedProductsTblBody.deleteRow(0);
+        }
+
+        
+        var cart_total_price=0;
+		
+        
+        for(var product in shoppingCart){
+               
+            var row=orderedProductsTblBody.insertRow();
+   
+            var cellName = row.insertCell(0);
+            var cellDescription = row.insertCell(1);
+            var cellPrice = row.insertCell(2);
+            cellPrice.align="right";
+			
+     
+            cellName.innerHTML = shoppingCart[product].Name;
+            cellDescription.innerHTML = shoppingCart[product].Description;
+            cellPrice.innerHTML = shoppingCart[product].Price;
+            cart_total_price+=shoppingCart[product].Price;
+			var x=row.insertCell(3);
+			x.innerHTML = '<input type="button" class="deletebtn" value="Delete!"onClick="deleteFromCart(this)" >';
+        }
+      
+        document.getElementById("cart_total").innerHTML=cart_total_price;
+		check=true;
+    }
+
+
+    function AddtoCart(name,description,price){
+     
+       var singleProduct = {};
+   
+       singleProduct.Name=name;
+       singleProduct.Description=description;
+       singleProduct.Price=price;
+
+       shoppingCart.push(singleProduct);
+	   
+
+       displayShoppingCart();
+
+    }  
+	
+	function deleteFromCart(r) {
+	
+	//alert(r);
+    var i = r.parentNode.parentNode.rowIndex;
+	//alert(i);
+	
+	shoppingCart.splice(i-1,1);
+    document.getElementById("orderedProductsTbl").deleteRow(i);
+	
+	//alert("deleted row is"+i);
+	
+	//displayShoppingCart();
+	var cart_total_price=0;
+	for(var product in shoppingCart){
+	cart_total_price=cart_total_price+shoppingCart[product].Price;
+	//alert("Product is"+product+" price is"+shoppingCart[product].Price);
+	}
+	document.getElementById("cart_total").innerHTML=cart_total_price;
+	check=true;
+	if(cart_total_price==0)
+	check=false;
+	}
+
+</script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+    </button>
+      <a class="navbar-brand" href="HomePage.html"><span class="glyphicon glyphicon-eye-open"></span>RedEye</a>
+    </div>
+    <div>
+  <div class="collapse navbar-collapse" id="navbar1">
+    <ul class="nav navbar-nav">
+   <li><a data-toggle="modal" data-target="#login-modal" style="cursor:pointer">Book a Ride!</a></li>
+	<li><a href="ShoppingCart.html">Order Snacks</a></li>
+	<li><a href="aboutUs.html">About Us</a></li>
+	<li><a href="Events.html">Events</a></li>
+	<li><a href="locations.html">Areas Covered</a></li>
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Interact with Us<span class="caret"></span></a>
+    <ul class="dropdown-menu">
+	<li><a href="Complaint.html">Grievances</a></li>
+    <li><a href="contactUs.html">Contact Us</a></li>
+	<li><a href="NUPD.html">NUPD-Services</a></li>
+    </ul>
+    </li>
+    </ul>
+	<form class="navbar-form navbar-right" role="search">
+    <div class="input-group">
+	<a href="tel:+8572609895"><i class="icon-search"></i><input type = "button" value="Emergency: (857)-260-9895"></a>
+     </div>
+     </form>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Login to Your Account</h1><br>
+				  <form action='login.php' method='post' accept-charset='UTF-8'>
+				  <input type='hidden' name='submitted' id='submitted' value='1'/>
+					<input type="text" name="user" placeholder="Username">
+					<input type="password" name="pass" placeholder="Password">
+					<input type="submit" name="Submit" class="login loginmodal-submit" value="Submit" >
+				  </form>
+					
+				  
+				</div>
+			</div>
+		  </div>
+
+
+<div class="shopping-cart">
+ 
+      <div class="title">
+        Shopping Cart
+      </div>
+
+      <div class="item">
+ 
+        <div class="image">
+          <img src="Pringles.jpg" alt="" height='75' width='75' />
+        </div>
+ 
+        <div class="description">
+          <span>Pringles Salted Chips</span>
+          <span>Snack Item &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+        </div>
+ 
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button" onclick="AddtoCart('Pringles','Salted Chips',5)">
+            <img src="plus.svg" alt="" />
+          </button>
+        </div>
+ 
+        <div class="total-price">$5</div>
+      </div>
+ 
+
+ <div class="item">
+ 
+        <div class="image">
+          <img src="Pretzels.jpg" alt="" height='75' width='75'/>
+        </div>
+ 
+        <div class="description">
+          <span>Pretzels</span>
+          <span>Snack Item &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+        </div>
+ 
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button" onclick="AddtoCart('Pretzels','Snack Item',3)">
+            <img src="plus.svg" alt="" />
+          </button>
+      
+        </div>
+ 
+        <div class="total-price">$3</div>
+      </div>
+ 
+  
+  
+      <div class="item">
+ 
+        <div class="image">
+          <img src="Nesquik.jpg" alt="" height='75' width='75'/>
+        </div>
+ 
+        <div class="description">
+          <span>Nesquik Chocolate Drink</span>
+          <span>Snack Item &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+        </div>
+ 
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button" onclick="AddtoCart('Nesquik','Chocolate Drink',8)">
+            <img src="plus.svg" alt="" />
+          </button>
+        </div>
+		
+	<div class="total-price">$8</div>
+      </div>		
+		
+
+      <div class="item">
+ 
+        <div class="image">
+          <img src="GranolaBar.jpg" alt="" height='75' width='75' />
+        </div>
+ 
+        <div class="description">
+          <span>Granola Bar</span>
+          <span>Snack Item &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+        </div>
+ 
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button" onclick="AddtoCart('Granola Bar','Snack Bar',4)">
+            <img src="plus.svg" alt="" />
+          </button>
+        </div>
+ 
+        <div class="total-price">$4</div>
+      </div>
+	  
+	  
+		</div>
+	
+	
+	<div class="ordered-cart">
+
+      <div class="title">
+        Ordered Items
+      </div>
+	  <div class="ordered-table">
+	 <td valign="top">
+            <table cellpadding="4" cellspacing="4" border="1" id="orderedProductsTbl">
+                <thead>
+                    <tr>
+                        <td>
+                            Name
+                        </td>
+                        <td>
+                            Description
+                        </td>
+                        <td>
+                            Price in $
+                        </td>
+						<td>
+                            Remove from Cart?
+                        </td>
+                    </tr>
+                </thead>
+                <tbody id="orderedProductsTblBody">
+                </tbody>
+                <tfoot>
+                    <tr>
+					<td>
+					Total:
+					</td>
+					<td>
+					</td>
+					
+                        <td colspan="1" align="right" id="cart_total">
+
+                        </td>
+						
+						
+						</tr>
+					</tfoot>	
+		</table>			
+			<br></br>
+							   </div>
+							   <div class="submit">
+							         <input type="button" value="Place Order!" onclick="myFunction()"></input>
+							  </div>
+							   </div>	
+  </body>
+  </html>
+  
+  
