@@ -1,4 +1,4 @@
-# WebDesignProject
+# University-Shuttle-Service
 
 • Developed a responsive web based website to allow students to book seats on shuttles with and designed to enhance the overall user experience
 
